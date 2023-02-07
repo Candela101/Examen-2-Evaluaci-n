@@ -13,11 +13,12 @@ class EnanaTest extends TestCase {
     }
 
     public function testHeridaLeveMuere() {
-        $enana = new Enana("Legolas", 10, "viva");
+        $enana = new Enana("Gimli", 5, "viva");
         $enana->heridaLeve();
         $this->assertLessThan(0, $enana->puntosVida);
         $this->assertEquals("muerta", $enana->situacion);
     }
+    
 
     public function testHeridaGrave() {
         $enana = new Enana("Bifur", 40, "viva");

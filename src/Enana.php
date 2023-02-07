@@ -17,15 +17,13 @@ class Enana
     public function heridaLeve(){
         $this->puntosVida -= 10;
         if($this->puntosVida <= 0){
-            $this->situacion = "limbo";
-        }
-        else if($this->puntosVida < 0){
             $this->situacion = "muerta";
         }
         else{
             $this->situacion = "viva";
         }
     }
+
 
     public function heridaGrave(){
         $this->puntosVida = 0;

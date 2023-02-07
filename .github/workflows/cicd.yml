@@ -6,7 +6,7 @@ jobs:
   ci:
   runs-on: ubuntu-latest
 
-    steps:
+  steps:
       - uses: actions/checkout@v2
       - name: PHPUnit Tests
         uses: php-actions/phpunit@v1

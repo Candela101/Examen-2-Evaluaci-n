@@ -4,18 +4,18 @@ on: [push]
 
 jobs:
   ci:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
-    - uses: actions/checkout@v2
-    - name: PHPUnit Tests
-      uses: php-actions/phpunit@v1
-      env:
-        TEST_NAME: enanaTest
-      with:
-        configuration: test/phpunit.xml
-        args: --coverage-text
-  cd:
+    steps:
+      - uses: actions/checkout@v2
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v1
+        env:
+          TEST_NAME: enanaTest
+        with:
+          configuration: test/phpunit.xml
+          args: --coverage-text
+  cd-build:
     runs-on: ubuntu-latest
     needs: ci
 
@@ -30,4 +30,4 @@ jobs:
       - name: Push
         run: |
           docker push ${{ secrets.DOCKER_USER }}/enanacicd:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USER }}/enanacicd:latest    
+          docker push ${{ secrets.DOCKER_USER }}/enanacicd:latest   
